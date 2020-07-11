@@ -16,6 +16,12 @@ This repo is intended to record self-practice on algorithm/data structure proble
 | [Search in Unknown Size](https://github.com/qiuyliu/algorithm_coding/blob/master/src/SearchInUnknownSize.java) | Binary Search |
 | [Find target in Bitonic Array](https://github.com/qiuyliu/algorithm_coding/blob/master/src/FindInPeakArray.java) | Binary Search |
 | [Find K Closest in Sorted Array](https://github.com/qiuyliu/algorithm_coding/blob/master/src/KClosestInSortedArray.java) | Binary Search |
+| [All Permutations](https://github.com/qiuyliu/algorithm_coding/blob/master/src/AllPermutations.java) | DFS |
+| [Combination of Coins](https://github.com/qiuyliu/algorithm_coding/blob/master/src/CoinCombination.java) | DFS |
+| [All Subsets](https://github.com/qiuyliu/algorithm_coding/blob/master/src/AllSubsets.java) | DFS |
+| [All Parenthesis](https://github.com/qiuyliu/algorithm_coding/blob/master/src/FindAllParenthesis.java) | DFS |
+| [First Bad Version](https://github.com/qiuyliu/algorithm_coding/blob/master/src/FirstBadVersion.java) | Binary Search |
+| [Two Sum](https://github.com/qiuyliu/algorithm_coding/blob/master/src/TwoSum.java) | Set, Sliding Window|
 
 
 

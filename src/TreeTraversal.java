@@ -75,6 +75,66 @@ public class TreeTraversal {
         }
     }
 
+    public List<Integer> inOrder2(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        inOrder2(root, res);
+        return res;
+    }
+
+    private void inOrder2(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return ;
+        }
+        inOrder2(root.left, res);
+        res.add(root.key);
+        inOrder2(root.right, res);
+
+    }
+//    post-order recursion way
+    public List<Integer> postOrder(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        postOrder(root, res);
+        return res;
+    }
+
+    private void postOrder(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return ;
+        }
+        postOrder(root.left, res);
+        postOrder(root.right, res);
+        res.add(root.key);
+    }
+
+//    post-order iterative way
+    public List<Integer> postOrder2(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        push(stack, root);
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            res.add(cur.key);
+//            if the top of stack is the parent of current node, we push the right subtree of top of stack
+            if (!stack.isEmpty() && stack.peek().left == cur) {
+                push(stack, stack.peek().right);
+            }
+        }
+        return res;
+    }
+
+    private void push(Deque<TreeNode> stack, TreeNode root) {
+        while (root != null) {
+            stack.push(root);
+            if (root.left != null) {
+                root = root.left;
+            } else if (root.right != null) {
+                root = root.right;
+            } else {
+                return ;
+            }
+        }
+    }
+
     public static void main(String [] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -87,5 +147,8 @@ public class TreeTraversal {
         System.out.println(sol.preOrder(root));
         System.out.println(sol.preOrder2(root));
         System.out.println(sol.inOrder(root));
+        System.out.println(sol.inOrder2(root));
+        System.out.println(sol.postOrder(root));
+        System.out.println(sol.postOrder2(root));
     }
 }

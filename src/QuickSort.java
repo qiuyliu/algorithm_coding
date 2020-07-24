@@ -48,7 +48,8 @@ public class QuickSort {
 		return leftBound;
 	}
 	private int pivotIndex(int left, int right) {
-		return left + (int) (Math.random() * (right - left + 1));
+
+		return left + (right - left) / 2;
 	}
 	
 	private void swap(int[] array, int left, int right) {

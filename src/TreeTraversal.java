@@ -2,6 +2,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+import java.util.LinkedList;
 
 public class TreeTraversal {
     static class TreeNode {
@@ -135,6 +136,45 @@ public class TreeTraversal {
         }
     }
 
+//    Level traversal
+
+    public List<Integer> zigZag(TreeNode root) {
+        // Write your solution here
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        Deque<TreeNode> dq = new LinkedList<>();
+        dq.offerLast(root);
+        int level = 1;
+        while (!dq.isEmpty()) {
+            int size = dq.size();
+            for (int i = 0; i < size; i++) {
+                if (level % 2 == 0) {
+                    TreeNode cur = dq.pollFirst();
+                    res.add(cur.key);
+                    if (cur.left != null) {
+                        dq.offerLast(cur.left);
+                    }
+                    if (cur.right != null) {
+                        dq.offerLast(cur.right);
+                    }
+                } else {
+                    TreeNode cur = dq.pollLast();
+                    res.add(cur.key);
+                    if (cur.right != null) {
+                        dq.offerFirst(cur.right);
+                    }
+                    if (cur.left != null) {
+                        dq.offerFirst(cur.left);
+                    }
+                }
+            }
+            level++;
+        }
+        return res;
+    }
+
     public static void main(String [] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -144,11 +184,12 @@ public class TreeTraversal {
         root.right.right = new TreeNode(6);
         TreeTraversal sol = new TreeTraversal();
 
-        System.out.println(sol.preOrder(root));
-        System.out.println(sol.preOrder2(root));
-        System.out.println(sol.inOrder(root));
-        System.out.println(sol.inOrder2(root));
-        System.out.println(sol.postOrder(root));
-        System.out.println(sol.postOrder2(root));
+//        System.out.println(sol.preOrder(root));
+//        System.out.println(sol.preOrder2(root));
+//        System.out.println(sol.inOrder(root));
+//        System.out.println(sol.inOrder2(root));
+//        System.out.println(sol.postOrder(root));
+//        System.out.println(sol.postOrder2(root));
+        System.out.println(sol.zigZag(root));
     }
 }

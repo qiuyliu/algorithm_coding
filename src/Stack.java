@@ -2,6 +2,42 @@ import java.util.LinkedList;
 
 public class Stack {
 
+
+	class ListNode {
+		int value;
+		ListNode next;
+		public ListNode(int value) {
+			this.value = value;
+		}
+	}
+//	implement stack
+	private ListNode head;
+
+	public Integer pop() {
+		if (head == null) {
+			return null;
+		}
+		ListNode prev = head;
+		head = head.next;
+		prev.next = null;
+		return head.value;
+
+	}
+
+	public Integer peek() {
+		if (head == null) {
+			return null;
+		}
+		return head.value;
+	}
+
+	public void push(int ele) {
+		ListNode newHead = new ListNode(ele);
+		newHead.next = head;
+		head = newHead;
+	}
+
+//	Two Stack sort
 	public void sort(LinkedList<Integer> s1) {
 		LinkedList<Integer> s2 = new LinkedList<Integer>();
 		if (s1 == null || s1.size() <= 1) {

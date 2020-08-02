@@ -3,18 +3,57 @@ import java.lang.*;
 import static java.util.Arrays.asList;
 
 public class Queue {
+    class ListNode {
+        int value;
+        ListNode next;
+        public ListNode(int value) {
+            this.value = value;
+        }
+    }
+    public ListNode head;
+    public ListNode tail;
+    public Queue() {
+        head = tail = null;
+    }
+
+    public Integer poll() {
+        if (head == null) {
+            return null;
+        }
+        ListNode node = head;
+        head = head.next;
+        if (head == null) {
+           tail = null;
+        }
+        return node.value;
+    }
+
+    public Integer peek() {
+        if (head == null) {
+            return null;
+        }
+        return head.value;
+    }
+
+    public void offer(int ele) {
+        if (head == null) {
+            head = new ListNode(ele);
+            tail = head;
+        } else {
+            tail.next = new ListNode(ele);
+            tail = tail.next;
+        }
+    }
 
     public static void main(String[] args) {
-//        queue
-//        Queue<Integer> q = new LinkedList<Integer>();
-//        Stack<Integer> s = new LinkedList<>();
-//        Deque<Integer> s = new LinkedList<>();
-//        int[] arr = new int[]{5,1,2,3,4};
-//        int[] copy = Arrays.copyOf(arr, arr.length);
-//        Arrays.sort(copy);
-//        List<Integer> list = Arrays.asList(2,2,3);
-//        System.out.println(Arrays.toString(copy));
-//        System.out.println(list);
+        Queue q = new Queue();
+        q.offer(1);
+        q.offer(3);
+        q.offer(5);
+        System.out.println(q.peek());
+        q.poll();
+        System.out.println(q.peek());
+
         List<Object> input = new ArrayList<>();
         input.add(1);
         input.add(2);

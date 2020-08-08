@@ -2,7 +2,7 @@ import java.util.*;
 import java.lang.*;
 import static java.util.Arrays.asList;
 
-public class Queue {
+public class Queue<I extends Number> {
     class ListNode {
         int value;
         ListNode next;
@@ -46,7 +46,7 @@ public class Queue {
     }
 
     public static void main(String[] args) {
-        Queue q = new Queue();
+        Queue<Number> q = new Queue<Number>();
         q.offer(1);
         q.offer(3);
         q.offer(5);

@@ -1,5 +1,23 @@
 import java.util.Arrays;
 
+// c: array is not null;
+// k == 0, return empty array
+// a: find the closest element in the array to the target
+// searching: the smallest large number of target in the array ===> closest ==> linear scan (n) ==> bs (logn)
+// comparing: diff of left and right side of the closest elemnt and collect in res[] ==> k
+// o(k+logn)
+
+// 1 2 3 t = 2 K = 3
+// l M r
+// while (l < r - 1)
+// a[m] >= t : r = m
+// otherwise : l = m
+// postprocess: a[l] >= target, return l
+//             a[r] >= tagret, return r
+// find kth elemnts:
+// res[]
+// left, right ==> k times iterations: comparing diff(a[left], target), diff(a[right], target),
+// add the element if the diff is smaller
 public class KClosestInSortedArray {
     public int[] kClosest(int[] array, int target, int k) {
         int[] res = new int[k];

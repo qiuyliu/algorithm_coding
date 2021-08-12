@@ -49,13 +49,13 @@ public class MergeSort {
 		MergeSort solution  = new MergeSort();
 		
 		int[] array = null;
-		array = solution.mergeSort(array);
-		System.out.println(Arrays.toString(array));
-		
-		array = new int[0];
-		array = solution.mergeSort(array);
-		System.out.println(Arrays.toString(array));
-		
+//		array = solution.mergeSort(array);
+//		System.out.println(Arrays.toString(array));
+//
+//		array = new int[0];
+//		array = solution.mergeSort(array);
+//		System.out.println(Arrays.toString(array));
+//
 		array = new int[] {3,5,1,2,4,8};
 		array = solution.mergeSort(array);
 		System.out.println(Arrays.toString(array));

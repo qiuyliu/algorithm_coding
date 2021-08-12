@@ -11,7 +11,7 @@ public class Dedup {
         char[] array = input.toCharArray();
         int i = 1, j = 1;
         while (j < array.length) {
-            if (array[i - 1] == array[j]) {
+            if (i > 0 && array[i - 1] == array[j]) {
                 while (array[i - 1] == array[j]) {
                     if (j == array.length - 1) {
                         return "";
@@ -81,8 +81,8 @@ public class Dedup {
     public static void main(String[] args) {
         Dedup sol = new Dedup();
         int[] input = new int[]{1,2,2};
-        String s = "aaab";
-//        System.out.println(sol.deDup(s));
+        String s = "aaabba";
+        System.out.println(sol.deDup(s));
         System.out.println(Arrays.toString(sol.dedup2(input)));
         int[] input2 = new int[]{1,2,2,1,4,5,4,3};
         System.out.println(Arrays.toString(new Dedup().dedup3(input2)));

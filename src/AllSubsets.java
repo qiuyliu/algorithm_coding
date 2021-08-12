@@ -64,7 +64,8 @@ public class AllSubsets {
         AllSubsets sol = new AllSubsets();
         String set = "abc";
         String set2 = "aab";
-//        System.out.println(sol.allSubsets(set));
-        System.out.println(sol.subSets(set2, 2));
+        String a = new String(set);
+        System.out.println(sol.allSubsets(set));
+//        System.out.println(sol.subSets(set2, 2));
     }
 }

@@ -1,4 +1,7 @@
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Deque;
 
 public class DeduplicateArray {
     public int[] dedup(int[] array) {
@@ -46,7 +49,7 @@ public class DeduplicateArray {
 
         int[] input = new int[]{1,1,2,3,3,4,5,5,5};
         int[] input2 = new int[]{1,2,2,1,3};
-        String input3 = "aababab";
+        String input3 = "aabbabbab";
 //        System.out.println(Arrays.toString(solution.dedup(input)));
         System.out.println(solution.deDup(input3));
     }

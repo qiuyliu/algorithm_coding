@@ -64,13 +64,13 @@ public class QuickSort {
 		array = solution.quickSort(array);
 		System.out.println(Arrays.toString(array));
 		
-		array = new int[0];
-		array = solution.quickSort(array);
-		System.out.println(Arrays.toString(array));
-		
-		array = new int[] { 1, 2, 3, 4 };
-		array = solution.quickSort(array);
-		System.out.println(Arrays.toString(array));
+//		array = new int[0];
+//		array = solution.quickSort(array);
+//		System.out.println(Arrays.toString(array));
+//
+//		array = new int[] { 1, 2, 3, 4 };
+//		array = solution.quickSort(array);
+//		System.out.println(Arrays.toString(array));
 		
 		array = new int[] { 2, 5, 3, 1, 4 };
 		array = solution.quickSort(array);

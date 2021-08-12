@@ -88,5 +88,44 @@ public class Stack {
 		System.out.println(s1);
 	}
 
+	int doSomething(int x) {
+		int sum = 0;
+		if (x == 'q') {
+			System.out.println("quit");
+		} else if (x <= 0) {
+			System.out.println("error");
+		} else if (x > 0){
+			for (int i = 1; i <= x; i++) {
+				sum += i;
+			}
+		}
+		return sum;
+	}
+
+	int[] merge(int[] arr1, int[] arr2) {
+		int[] m = new int[arr1.length + arr2.length];
+		for (int i = 0; i < arr1.length; i++) {
+			m[i] = arr1[i];
+		}
+		int j = arr1.length;
+		for (int i = 0; i < arr2.length; i++) {
+			m[i + j] = arr2[i];
+		}
+		return m;
+	}
+	int secondLargest(int[] nums) {
+		int first = Integer.MIN_VALUE;
+		int second = Integer.MIN_VALUE;
+		for (int num : nums) {
+			if (num > first) {
+				second = first;
+				first = num;
+			} else if (num > second) {
+				second = num;
+			}
+		}
+		return second;
+	}
+
 }
 

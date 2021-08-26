@@ -1,12 +1,12 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class AllPermutations {
     public List<String> permutations(String input) {
         List<String> res = new ArrayList<>();
         char[] inputArr = input.toCharArray();
 
-        permutation(inputArr, 0, res);
+        // permutation(inputArr, 0, res);
+        permutations(inputArr, 0, res);
         return res;
     }
 
@@ -23,6 +23,23 @@ public class AllPermutations {
         }
     }
 
+    private void permutations(char[] chars, int index, List<String> res) {
+        if (index == chars.length) {
+          res.add(new String(chars));
+          return ;
+        }
+        Set<Character> s = new HashSet<>();
+        for (int i = index; i < chars.length; i++) {
+          if (s.contains(chars[i])) {
+            continue;
+          }
+          s.add(chars[i]);
+          swap(chars, index, i);
+          permutations(chars, index + 1, res);
+          swap(chars, index, i);
+        }
+      }
+
     private void swap(char[] arr, int i, int j) {
         char temp = arr[i];
         arr[i] = arr[j];
@@ -31,6 +48,8 @@ public class AllPermutations {
     public static void main(String[] args) {
         AllPermutations sol = new AllPermutations();
         String input = "abc";
-        System.out.println(sol.permutations(input));
+        String dupInput = "aab";
+        // System.out.println(sol.permutations(input));
+        System.out.println(sol.permutations(dupInput));
     }
 }

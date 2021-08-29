@@ -38,7 +38,7 @@ public class StringShuffle {
         reverse(c, l+1, r-1);
     }
     public static void main(String[] args) {
-        String input = "ABCD1234";
+        String input = "123456";
         StringShuffle sol = new StringShuffle();
         System.out.println(sol.stringShuffle(input));
     }

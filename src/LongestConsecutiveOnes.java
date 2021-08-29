@@ -1,4 +1,8 @@
-
+// [l, r] is the longest subarray contains one including l and r index
+// r traverse the array, if r is 0, k--
+// till k < 0, we cant filp anymore, we can do l++
+// to make sure k is not over used, l needs to rule out the overused while k is smaller than 0
+// and make sure if we rule out 0 we need to do k++
 public class LongestConsecutiveOnes {
     public int LongestConsecutive(int[] nums, int k) {
         if (nums == null || nums.length == 0) {

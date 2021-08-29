@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class LongestConsecutiveOnes {
     public int LongestConsecutive(int[] nums, int k) {

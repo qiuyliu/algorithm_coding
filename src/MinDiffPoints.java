@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -11,9 +13,9 @@ public class MinDiffPoints {
         if (input == null || input.length == 0 || input[0].length == 0) {
             return new int[2];
         }
-        // sort
+        // sort - o(nlogn)
         sort(input);
-        // find min and max and insert into map
+        // find min and max and insert into map - o(n)
         HashMap<int[], Integer> map = new HashMap<>();
         for (int[] cur : input) {
             int len = cur.length;
@@ -31,7 +33,8 @@ public class MinDiffPoints {
                     return a.getValue() < b.getValue() ? -1 : 1;
                 }
             });
-    
+        
+        // add to min heap to sort - o(nlogn)
         for (Map.Entry<int[], Integer> e : map.entrySet()) {
             min.add(e);
         }
@@ -50,7 +53,7 @@ public class MinDiffPoints {
         int[][] input = new int[][]{
             {3, 2, 0},
             {2, 7, 9},
-            {-1, 0, -2}
+            {-1, 0, -2, -3}
         };
         int[] res = mdp.mindiff(input);
         for (int i = 0; i < res.length; i++) {

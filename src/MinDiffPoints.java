@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.IOError;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -48,16 +53,22 @@ public class MinDiffPoints {
         }
     }
 
-    public static void main(String[] args) {
-        MinDiffPoints mdp = new MinDiffPoints();
-        int[][] input = new int[][]{
-            {3, 2, 0},
-            {2, 7, 9},
-            {-1, 0, -2, -3}
-        };
-        int[] res = mdp.mindiff(input);
-        for (int i = 0; i < res.length; i++) {
-            System.out.println(res[i]);
-        }
+    public static void main(String[] args) throws IOException{
+        // MinDiffPoints mdp = new MinDiffPoints();
+        // int[][] input = new int[][]{
+        //     {3, 2, 0},
+        //     {2, 7, 9},
+        //     {-1, 0, -2, -3}
+        // };
+        // int[] res = mdp.mindiff(input);
+        // for (int i = 0; i < res.length; i++) {
+        //     System.out.println(res[i]);
+        // }
+        // InputStreamReader reader = new InputStreamReader("~/Desktop/sample-input-1.txt", StandardCharsets.UTF_8);
+        // BufferedReader in = new BufferedReader(reader);
+        // String line;
+        // while ((line = in.readLine()) != null) {
+        //     System.out.println(line);
+        // }
     }
 }
